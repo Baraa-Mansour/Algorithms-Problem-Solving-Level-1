@@ -9,6 +9,16 @@ using namespace std;
 
 // -----------------------------------------
 
+// Struct
+struct stDriverInfo 
+{
+    int Age;
+    bool HaveDriverLicense;
+    bool HaveRecommendation;
+};
+
+// -----------------------------------------
+
 // enums
 enum enNumberType
 {
@@ -76,11 +86,52 @@ void printNumberType(enNumberType type)
 }
 // END
 
+/* proplem - 4+5: 
+* 4:
+* -user should enter age and if have driver license
+* -print 'hired' if age > 21 and have license 
+* -else print 'rejected'
+* 5:
+* -enter if have recommendation
+* -pass if have recommendation
+*/
+stDriverInfo readDriverInfo()
+{
+    stDriverInfo info;
+    string answer = "Y";
+
+    cout << "enter age" << endl;
+    cin >> info.Age;
+    cout << "have license? (Y or N)" << endl;
+    cin >> answer;
+    cout << "have recommendation? " << endl;
+    cin >> info.HaveRecommendation;
+
+    answer == "Y" || "y" ? info.HaveDriverLicense = true : info.HaveDriverLicense = false;
+
+    return info;
+}
+bool validDriver(stDriverInfo info)
+{
+    return info.HaveRecommendation || (info.Age > 21 && info.HaveDriverLicense);
+}
+void printDriverResult(stDriverInfo info)
+{
+    if (validDriver(info))
+    {
+        cout << "Hired" << endl;
+    }
+    else
+    {
+        cout << "Rejected" << endl;
+    }
+}
+
 // -----------------------------------------
 
 int main()
 {
-    printNumberType(checkEvenOdd(readNumber()));
 
+    printDriverResult(readDriverInfo());
     return 0;
 }
