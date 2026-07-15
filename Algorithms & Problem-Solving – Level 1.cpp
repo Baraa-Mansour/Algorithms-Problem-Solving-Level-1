@@ -2,8 +2,12 @@
 #include <iostream>
 #include <string>
 
+// -----------------------------------------
+
 // Using namespaces
 using namespace std;
+
+// -----------------------------------------
 
 // enums
 enum enNumberType
@@ -12,20 +16,7 @@ enum enNumberType
     EVEN = 2,
 };
 
-// Declaration
-void printName(string name);
-string readName();
-int readNumber();
-enNumberType checkEvenOdd(int number);
-void printNumberType(enNumberType type);
-
-
-int main()
-{
-    printNumberType(checkEvenOdd(readNumber()));
-
-    return 0;
-}
+// -----------------------------------------
 
 // proplem-1: print name in screen.
 void printName(string name)
@@ -33,7 +24,7 @@ void printName(string name)
     cout << "your name is: " << name << endl;
     return;
 }
-// --
+// END
 
 // proplem-2: Read name from user then print it
 string readName()
@@ -45,7 +36,7 @@ string readName()
 
     return name;
 }
-// --
+// END
 
 // proplem-3: read number then check if even or odd and print result
 int readNumber()
@@ -83,5 +74,13 @@ void printNumberType(enNumberType type)
         return;
     }
 }
-// --
+// END
 
+// -----------------------------------------
+
+int main()
+{
+    printNumberType(checkEvenOdd(readNumber()));
+
+    return 0;
+}
