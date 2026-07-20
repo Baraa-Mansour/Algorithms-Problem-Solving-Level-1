@@ -213,11 +213,23 @@ int max(int num1, int num2)
     return num1 >= num2 ? num1 : num2;
 }
 // END
+
+// proplem-13: max of three number
+int max(int num1, int num2, int num3)
+{
+    int temp = max(num1, num2);
+    int result = max(temp, num3);
+
+    return result;
+}
+// END
+
 int main()
 {
     int num1 = readNumber();
     int num2 = readNumber();
-    int result = max(num1, num2);
+    int num3 = readNumber();
+    int result = max(num1, num2, num3);
     printMessage("max = " + to_string(result));
     return 0;
 }
