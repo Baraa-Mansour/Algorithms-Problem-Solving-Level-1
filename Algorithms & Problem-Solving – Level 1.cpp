@@ -231,14 +231,20 @@ void swap(int& num1, int& num2)
     num1 = num2;
     num2 = temp;
 }
+// END
+
+// proplem-15: rectangle area
+float rectangleArea(float width, float hight)
+{
+    return (float)width * hight;
+}
+// END
 
 int main()
 {
     int num1 = readNumber();
     int num2 = readNumber();
-    printMessage("before: " + to_string(num1) + " " + to_string(num2));
-    swap(num1, num2);
-    printMessage("after: " + to_string(num1) + " " + to_string(num2));
+    printMessage(to_string(rectangleArea(num1, num2)));
 
     return 0;
 }
