@@ -28,7 +28,10 @@ struct stPiggyBankContent
         Quarters = 0, // quarter = 25
         Dollars = 0; // dollar = 100
 };
-
+struct stTimeDuration
+{
+    int days = 0, hours = 0, minutes = 0, seconds = 0;
+};
 
 // enums
 enum enNumberType
@@ -616,6 +619,31 @@ bool isPrime(int number)
 
     return true;
 } 
+// END
+
+// proplem-38: take task time duration and calculate its time per seconds
+stTimeDuration ReadTimeDuration()
+{
+    stTimeDuration duration;
+
+    cout << "Enter (days, hours, minutes, seconds): " << endl;
+    cin >> duration.days;
+    cin >> duration.hours;
+    cin >> duration.minutes;
+    cin >> duration.seconds;
+
+    return duration;
+}
+float GetDurationInSeconds(stTimeDuration duration)
+{
+    float seconds = duration.seconds;
+
+    seconds += duration.minutes * 60;
+    seconds += duration.hours * 60 * 60;
+    seconds += duration.days * 60 * 60 * 24;
+
+    return seconds;
+}
 // END
 
 int main()
