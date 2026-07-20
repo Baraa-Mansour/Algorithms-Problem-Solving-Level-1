@@ -646,9 +646,17 @@ float GetDurationInSeconds(stTimeDuration duration)
 }
 // END
 
+// proplem-39: print letters from A to Z
+void PrintLettersFromAtoZ()
+{
+    for (int i = 65; i < 91; i++)
+        cout << (char)i << endl;
+}
+// END
+
 int main()
 {
-    cout << SumNumbers() << endl;
+    PrintLettersFromAtoZ();
 
 
     return 0;
