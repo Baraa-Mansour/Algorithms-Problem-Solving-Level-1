@@ -331,12 +331,19 @@ float CircleAreaByATriangle(float A, float B, float C)
 }
 // END
 
+// proplem-24: Checks if a given number falls within a specified range
+bool validateNumberInRange(int number, int from, int to)
+{
+    return (number >= from) && (number <= to);
+}
+// END
 
 int main()
 {
-    int num1 = readNumber();
-    int num2 = readNumber();
-    printMessage(to_string(CircleAreaInscribedInSquare(num1)));
+    int age = readNumber();
+
+    if (validateNumberInRange(age, 18, 50))
+        cout << "valid" << endl;
 
     return 0;
 }
