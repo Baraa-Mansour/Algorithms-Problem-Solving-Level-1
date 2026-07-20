@@ -185,7 +185,7 @@ void readNumbers(int& num1, int& num2, int& num3)
     cout << "enter num3: " << endl;
     cin >> num3;
 }
-int sumNumbers(int num1, int num2, int num3)
+int sumOfThreeNumbers(int num1, int num2, int num3)
 {
     int result = num1 + num2 + num3;
 
@@ -193,11 +193,21 @@ int sumNumbers(int num1, int num2, int num3)
 }
 // END
 
+// proplem-10: read 3 number then print there avg
+float avgOfThreeNumebrs(int num1, int num2, int num3)
+{
+    int sum = sumOfThreeNumbers(num1, num2, num3);
+    float avg = (float)sum / 3;
+
+    return avg;
+}
+// END
+
 int main()
 {
     int num1, num2, num3;
     readNumbers(num1, num2, num3);
-    int result = sumNumbers(num1, num2, num3);
+    float result = avgOfThreeNumebrs(num1, num2, num3);
     printMessage("sum = " + to_string(result));
     return 0;
 }
