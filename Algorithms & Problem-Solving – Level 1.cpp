@@ -405,10 +405,26 @@ int SumOddNumbersFrom1toN_UsingWhile(int number)
 }
 // END
 
+// proplem-30: Computes the sum of all even numbers from 1 to N using a do-while loop
+int SumEvenNumbersFrom1toN_UsingDoWhile(int number)
+{
+    int result = 0;
+
+    do
+    {
+        if(checkEvenOdd(number) == enNumberType::ODD)
+            result += number;
+        number--;
+    } while (number > 0);
+
+    return result;
+}
+// END
+
 int main()
 {
     int number = readNumber();
-    cout << SumOddNumbersFrom1toN_UsingWhile(number);
+    cout << SumEvenNumbersFrom1toN_UsingDoWhile(number);
 
     return 0;
 }
