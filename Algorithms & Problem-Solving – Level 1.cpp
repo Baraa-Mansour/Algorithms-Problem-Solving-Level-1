@@ -269,11 +269,22 @@ float circleArea(float R)
 }
 // END
 
+// propllem-19: Computes the area of a circle given its diameter using the formula: (π * D²) / 4
+float CircleAreaByDiameter(float D)
+{
+    const float PI = 3.141592653589793238;
+
+    float Area = (float)(pow(D, 2) * PI) / 4;
+
+    return Area;
+}
+// END
+
 int main()
 {
     int num1 = readNumber();
     int num2 = readNumber();
-    printMessage(to_string(triangleAre(num1, num2)));
+    printMessage(to_string(CircleAreaByDiameter(num1)));
 
     return 0;
 }
