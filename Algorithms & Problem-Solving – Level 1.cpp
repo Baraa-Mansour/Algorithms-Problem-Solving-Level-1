@@ -9,7 +9,7 @@ using namespace std;
 
 
 // Struct
-struct stDriverInfo 
+struct stDriverInfo
 {
     int Age;
     bool HaveDriverLicense;
@@ -19,6 +19,14 @@ struct stInfo
 {
     string firstName;
     string lastName;
+};
+struct stPiggyBankContent
+{
+    int Pennies = 0, // pennis = 1
+        Nickels = 0, // nickels = 5
+        Dimes = 0, // dime = 10
+        Quarters = 0, // quarter = 25
+        Dollars = 0; // dollar = 100
 };
 
 
@@ -88,10 +96,10 @@ void printNumberType(enNumberType type)
 }
 // END
 
-/* proplem - 4+5: 
+/* proplem - 4+5:
 * 4:
 * -user should enter age and if have driver license
-* -print 'hired' if age > 21 and have license 
+* -print 'hired' if age > 21 and have license
 * -else print 'rejected'
 * 5:
 * -enter if have recommendation
@@ -368,7 +376,7 @@ void PrintRangeFrom1toN_UsingWhile(int number)
 void PrintRangeFrom1toN_UsingDoWhile(int number)
 {
     int counter = number;
-    
+
     do
     {
         cout << counter << endl;
@@ -412,7 +420,7 @@ int SumEvenNumbersFrom1toN_UsingDoWhile(int number)
 
     do
     {
-        if(checkEvenOdd(number) == enNumberType::EVEN)
+        if (checkEvenOdd(number) == enNumberType::EVEN)
             result += number;
         number--;
     } while (number > 0);
@@ -445,7 +453,7 @@ int factorial(int number)
 // END
 
 // proplem-32: Computes the power of a given number using an iterative loop
-int PowerOfM(int number, int power) 
+int PowerOfM(int number, int power)
 {
     int result = 1;
 
@@ -479,7 +487,7 @@ char GetGradeLetter(int number)
 {
     if (number >= 90)
         return 'A';
-    else if(number >= 80)
+    else if (number >= 80)
         return 'B';
     else if (number >= 70)
         return 'C';
@@ -492,10 +500,53 @@ char GetGradeLetter(int number)
 }
 // END
 
+
+// proplem-34: 
+// -prompts the user to enter the number of different coins and dollar bills in the piggy bank
+// -get total dollars and Pennies
+stPiggyBankContent ReadPiggyBankContent()
+{
+    stPiggyBankContent PiggyBankContent;
+
+    cout << "Please enter the total number of Pennies: " << endl;
+    cin >> PiggyBankContent.Pennies;
+    cout << "Please enter the total number of Nickels: " << endl;
+    cin >> PiggyBankContent.Nickels;
+    cout << "Please enter the total number of Dimes: " << endl;
+    cin >> PiggyBankContent.Dimes;
+    cout << "Please enter the total number of Quarters: " << endl;
+    cin >> PiggyBankContent.Quarters;
+    cout << "Please enter the total number of Dollar bills: " << endl;
+    cin >> PiggyBankContent.Dollars;
+
+    return PiggyBankContent;
+}
+float GetTotalPennies(stPiggyBankContent content)
+{
+    float total = 0;
+
+    total += content.Pennies;
+    total += (float)content.Nickels * 5;
+    total += (float)content.Dimes * 10;
+    total += (float)content.Quarters * 25;
+    total += (float)content.Dollars * 100;
+
+    return total;
+}
+float GetTotalDollars(stPiggyBankContent content)
+{
+    float totalPennies = GetTotalPennies(content);
+
+    float totalDollars = totalPennies / 100;
+
+    return totalDollars;
+}
+// END
+
 int main()
 {
     int number = ReadNumberInRange(0, 100);
-    
+
 
     cout << GetGradeLetter(number);
 
