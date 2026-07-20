@@ -444,10 +444,27 @@ int factorial(int number)
 }
 // END
 
+// proplem-32: Computes the power of a given number using an iterative loop
+int PowerOfM(int number, int power) 
+{
+    int result = 1;
+
+    while (power > 0)
+    {
+        result *= number;
+        power--;
+    }
+
+    return result;
+}
+// END
 
 int main()
 {
-    cout << factorial(readPositiveNumber());
+    int number = readNumber();
+    int power = readNumber();
+
+    cout << PowerOfM(number, power);
 
     return 0;
 }
