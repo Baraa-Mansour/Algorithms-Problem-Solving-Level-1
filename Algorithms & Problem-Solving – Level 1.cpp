@@ -206,11 +206,18 @@ float avgOfThreeNumebrs(int num1, int num2, int num3)
 // proplem-11: check if avg pass or fail
 // solution: just put the avg in isPass and then preintStudentStatus
 
+
+// proplem-12: read two number then print max of them
+int max(int num1, int num2)
+{
+    return num1 >= num2 ? num1 : num2;
+}
+// END
 int main()
 {
-    int num1, num2, num3;
-    readNumbers(num1, num2, num3);
-    float result = avgOfThreeNumebrs(num1, num2, num3);
-    printMessage("sum = " + to_string(result));
+    int num1 = readNumber();
+    int num2 = readNumber();
+    int result = max(num1, num2);
+    printMessage("max = " + to_string(result));
     return 0;
 }
