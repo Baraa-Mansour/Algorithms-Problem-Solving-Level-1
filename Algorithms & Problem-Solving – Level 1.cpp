@@ -364,7 +364,7 @@ void PrintRangeFrom1toN_UsingWhile(int number)
 }
 // END
 
-// proplem-27: Prints numbers from 1 to N using a do-while loop
+// proplem-27: Prints numbers from N to 1 using a do-while loop
 void PrintRangeFrom1toN_UsingDoWhile(int number)
 {
     int counter = number;
@@ -412,7 +412,7 @@ int SumEvenNumbersFrom1toN_UsingDoWhile(int number)
 
     do
     {
-        if(checkEvenOdd(number) == enNumberType::ODD)
+        if(checkEvenOdd(number) == enNumberType::EVEN)
             result += number;
         number--;
     } while (number > 0);
@@ -442,6 +442,7 @@ int factorial(int number)
     }
     return factorial;
 }
+// END
 
 
 int main()
