@@ -36,6 +36,13 @@ enum enNumberType
     ODD = 1,
     EVEN = 2,
 };
+enum enOperationType
+{
+    Add = '+', 
+    Subtract = '-', 
+    Multiply = '*', 
+    Divide = '/'
+};
 
 
 // proplem-1: print name in screen.
@@ -543,12 +550,50 @@ float GetTotalDollars(stPiggyBankContent content)
 }
 // END
 
+// proplem-35: get two number and operation from user then calculate the result 
+enOperationType ReadOperation()
+{
+    char operation = '+';
+
+    cout << "select Operation: " << endl;
+    cout << "Add: +" << endl;
+    cout << "Subtract: -" << endl;
+    cout << "Multiply: *" << endl;
+    cout << "Divide: /" << endl;
+    cin >> operation;
+
+    return (enOperationType)operation;
+}
+float Calculate(int num1, int num2, enOperationType op)
+{
+    switch (op)
+    {
+    case Add:
+        return num1 + num2;
+        break;
+    case Subtract:
+        return num1 - num2;
+        break;
+    case Multiply:
+        return num1 * num2;
+        break;
+    case Divide:
+        return num1 + num2;
+        break;
+    default:
+        return num1 + num2;
+        break;
+    }
+}
+// END
+
 int main()
 {
-    int number = ReadNumberInRange(0, 100);
+    int num1 = readNumber();
+    int num2 = readNumber();
+    enOperationType op = ReadOperation();
+    cout << Calculate(num1, num2, op);
 
-
-    cout << GetGradeLetter(number);
 
     return 0;
 }
