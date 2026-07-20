@@ -680,9 +680,35 @@ bool ReadPin()
 }
 // END
 
+// proplem-41: get PIN with 3 chances
+bool Login()
+{
+    int pin = 0;
+    int counter = 3;
+
+    do
+    {
+        pin = readNumber();
+
+        if (CheckPin(pin))
+            return true;
+        else
+        {
+            system("color 4F");
+            cout << "wrong!" << endl;
+
+            counter--;
+        }
+
+    } while (counter != 0);
+
+    return false;
+}
+// END
+
 int main()
 {
-    if (ReadPin())
+    if (Login())
     {
         system("color 2F");
         cout << to_string(7150) << endl;
