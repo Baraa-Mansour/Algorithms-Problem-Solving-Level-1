@@ -148,10 +148,21 @@ string getFullName(stInfo info)
 }
 // END
 
+// Proplem-7: read number then print its half
+float halfOfNumber(int number)
+{
+    float half = 0;
+    half = number / 2.0;
+    return half;
+}
+void printMessage(string message)
+{
+    cout << message << endl;
+}
+// END
 
 int main()
 {
-
-    printName(getFullName(readInfo()));
+    printMessage("half of number is: " + to_string(halfOfNumber(readNumber())));
     return 0;
 }
