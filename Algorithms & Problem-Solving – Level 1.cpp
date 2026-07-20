@@ -249,11 +249,20 @@ float rectangleAreaBySideAndDiagonal(float side, float diagonal)
 }
 // END
 
+// proplem-17: Computes the area of a triangle given its base and height
+float triangleAre(float base, float height)
+{
+    float result = (float)((float)1 / 2) * base * height;
+
+    return result;
+}
+// END
+
 int main()
 {
     int num1 = readNumber();
     int num2 = readNumber();
-    printMessage(to_string(rectangleAreaBySideAndDiagonal(num1, num2)));
+    printMessage(to_string(triangleAre(num1, num2)));
 
     return 0;
 }
