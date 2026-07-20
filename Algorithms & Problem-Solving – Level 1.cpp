@@ -291,6 +291,17 @@ float CircleAreaInscribedInSquare(float A)
 }
 // END
 
+// proplem-21: Computes the area of a circle given its circumference using the formula: Area = (L²) / (4π)
+float CircleAreaByCircumference(float L)
+{
+    const float PI = 3.141592653589793238;
+
+    float Area = pow(L, 2) / (4 * PI);
+
+    return Area;
+}
+// END
+
 int main()
 {
     int num1 = readNumber();
