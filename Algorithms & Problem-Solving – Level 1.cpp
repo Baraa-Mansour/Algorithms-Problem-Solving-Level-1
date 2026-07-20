@@ -302,6 +302,16 @@ float CircleAreaByCircumference(float L)
 }
 // END
 
+// proplem-22: Computes the area of a circle inscribed in an isosceles triangle using a specific formula.
+float CircleAreaByITriangle(float A, float B)
+{
+    const float PI = 3.141592653589793238;
+
+    float Area = PI * (pow(B, 2) / 4) * ((2 * A - B) / (2 * A + B));
+    return Area;
+}
+// END
+
 int main()
 {
     int num1 = readNumber();
