@@ -1,6 +1,7 @@
 ﻿// Imports
 #include <iostream>
 #include <string>
+#include <cmath>
 
 
 // Using namespaces
@@ -253,6 +254,16 @@ float rectangleAreaBySideAndDiagonal(float side, float diagonal)
 float triangleAre(float base, float height)
 {
     float result = (float)((float)1 / 2) * base * height;
+
+    return result;
+}
+// END
+
+// proplem-18: Computes the area of a circle given its radius
+float circleArea(float R)
+{
+    const float PI = 3.141592653589793238;
+    float result = PI * pow(R, 2);
 
     return result;
 }
