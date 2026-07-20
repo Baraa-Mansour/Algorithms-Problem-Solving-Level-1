@@ -378,10 +378,20 @@ void PrintRangeFrom1toN_UsingDoWhile(int number)
 }
 // END
 
+// proplem-28: Prints numbers from N down to 1 using a for loop
+void PrintRangeFromNto1_UsingFor(int number)
+{
+    for (int i = number; i >= 1; i--)
+    {
+        cout << i << endl;
+    }
+}
+// END
+
 int main()
 {
     int number = readNumber();
-    PrintRangeFrom1toN_UsingDoWhile(number);
+    PrintRangeFromNto1_UsingFor(number);
 
     return 0;
 }
