@@ -604,6 +604,20 @@ int SumNumbers()
 }
 // END
 
+// proplem-37: check if prime number
+bool isPrime(int number)
+{
+    int half = (number / 2); // number cant divide on number bigger than its half
+    for (int i = 2; i <= half; i++)
+    {
+        if (number % i == 0)
+            return false;
+    }
+
+    return true;
+} 
+// END
+
 int main()
 {
     cout << SumNumbers() << endl;
