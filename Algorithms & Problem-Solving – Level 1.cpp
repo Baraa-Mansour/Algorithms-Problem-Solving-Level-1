@@ -16,6 +16,11 @@ struct stDriverInfo
     bool HaveDriverLicense;
     bool HaveRecommendation;
 };
+struct stInfo
+{
+    string firstName;
+    string lastName;
+};
 
 // -----------------------------------------
 
@@ -128,11 +133,30 @@ void printDriverResult(stDriverInfo info)
 }
 // END
 
+// proplem-6: read first/last name then print fullname
+stInfo readInfo()
+{
+    stInfo info;
+
+    cout << "Enter first name: " << endl;
+    getline(cin, info.firstName);
+
+    cout << "Enter last name: " << endl;
+    getline(cin, info.lastName);
+
+    return info;
+}
+string getFullName(stInfo info)
+{
+    return info.firstName + " " + info.lastName;
+}
+// END
+
 // -----------------------------------------
 
 int main()
 {
 
-    printDriverResult(readDriverInfo());
+    printName(getFullName(readInfo()));
     return 0;
 }
