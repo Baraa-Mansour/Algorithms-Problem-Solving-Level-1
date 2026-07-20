@@ -2,12 +2,10 @@
 #include <iostream>
 #include <string>
 
-// -----------------------------------------
 
 // Using namespaces
 using namespace std;
 
-// -----------------------------------------
 
 // Struct
 struct stDriverInfo 
@@ -22,7 +20,6 @@ struct stInfo
     string lastName;
 };
 
-// -----------------------------------------
 
 // enums
 enum enNumberType
@@ -31,7 +28,6 @@ enum enNumberType
     EVEN = 2,
 };
 
-// -----------------------------------------
 
 // proplem-1: print name in screen.
 void printName(string name)
@@ -152,7 +148,6 @@ string getFullName(stInfo info)
 }
 // END
 
-// -----------------------------------------
 
 int main()
 {
