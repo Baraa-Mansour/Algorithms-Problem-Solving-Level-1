@@ -312,6 +312,26 @@ float CircleAreaByITriangle(float A, float B)
 }
 // END
 
+// proplem-23: Computes the area of a circle inscribed in a triangle using the formula:
+//          Area = π * (T²), where T = (ABC) / (4 * sqrt(P * (P - A) * (P - B) * (P - C)))
+float CircleAreaByATriangle(float A, float B, float C)
+{
+    const float PI = 3.141592653589793238;
+
+    // P = (A + B + C) / 2.
+    float P = (A + B + C) / 2;
+
+    // T = (A * B * C) / (4 * sqrt(P * (P - A) * (P - B) * (P - C)))
+    float T = (A * B * C) / (4 * sqrt(P * (P - A) * (P - B) * (P - C)));
+
+    // Area = π * T².
+    float Area = PI * pow(T, 2);
+
+    return Area;
+}
+// END
+
+
 int main()
 {
     int num1 = readNumber();
