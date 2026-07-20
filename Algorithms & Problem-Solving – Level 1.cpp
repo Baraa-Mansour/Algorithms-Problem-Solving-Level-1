@@ -161,8 +161,22 @@ void printMessage(string message)
 }
 // END
 
+// proplem-8: get grade the print pass if > 50 else fail
+bool isPass(int grade)
+{
+    return grade > 50;
+}
+void printStudentStatus(bool isPass)
+{
+    if (isPass)
+        cout << "Pass" << endl;
+    else
+        cout << "Fail" << endl;
+}
+// END
+
 int main()
 {
-    printMessage("half of number is: " + to_string(halfOfNumber(readNumber())));
+    printStudentStatus(isPass(readNumber()));
     return 0;
 }
