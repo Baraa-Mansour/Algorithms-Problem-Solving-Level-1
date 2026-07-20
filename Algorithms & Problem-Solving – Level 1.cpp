@@ -224,12 +224,21 @@ int max(int num1, int num2, int num3)
 }
 // END
 
+// proplem-14: read two numbers then swap them
+void swap(int& num1, int& num2)
+{
+    int temp = num1;
+    num1 = num2;
+    num2 = temp;
+}
+
 int main()
 {
     int num1 = readNumber();
     int num2 = readNumber();
-    int num3 = readNumber();
-    int result = max(num1, num2, num3);
-    printMessage("max = " + to_string(result));
+    printMessage("before: " + to_string(num1) + " " + to_string(num2));
+    swap(num1, num2);
+    printMessage("after: " + to_string(num1) + " " + to_string(num2));
+
     return 0;
 }
