@@ -459,12 +459,44 @@ int PowerOfM(int number, int power)
 }
 // END
 
+// proplem-33: 
+// -Prompts the user to enter a grade within a specified range and ensures valid input
+// -Determines the letter grade corresponding to the numeric grade
+int ReadNumberInRange(int from, int to)
+{
+    int number = 0;
+
+    do
+    {
+        string message = "Enter number between (" + to_string(from) + ", " + to_string(to) + ")";
+        cout << message << endl;
+        cin >> number;
+    } while (number > to || number < from);
+
+    return number;
+}
+char GetGradeLetter(int number)
+{
+    if (number >= 90)
+        return 'A';
+    else if(number >= 80)
+        return 'B';
+    else if (number >= 70)
+        return 'C';
+    else if (number >= 60)
+        return 'D';
+    else if (number >= 50)
+        return 'E';
+    else
+        return 'F';
+}
+
 int main()
 {
-    int number = readNumber();
-    int power = readNumber();
+    int number = ReadNumberInRange(0, 100);
+    
 
-    cout << PowerOfM(number, power);
+    cout << GetGradeLetter(number);
 
     return 0;
 }
