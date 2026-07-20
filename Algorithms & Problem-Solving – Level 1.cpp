@@ -240,11 +240,20 @@ float rectangleArea(float width, float hight)
 }
 // END
 
+// proplem-16: rectangle area by side and diagonal 
+float rectangleAreaBySideAndDiagonal(float side, float diagonal)
+{
+    float result = side * sqrt(pow(diagonal, 2) - pow(side, 2));
+
+    return result;
+}
+// END
+
 int main()
 {
     int num1 = readNumber();
     int num2 = readNumber();
-    printMessage(to_string(rectangleArea(num1, num2)));
+    printMessage(to_string(rectangleAreaBySideAndDiagonal(num1, num2)));
 
     return 0;
 }
