@@ -203,6 +203,9 @@ float avgOfThreeNumebrs(int num1, int num2, int num3)
 }
 // END
 
+// proplem-11: check if avg pass or fail
+// solution: just put the avg in isPass and then preintStudentStatus
+
 int main()
 {
     int num1, num2, num3;
