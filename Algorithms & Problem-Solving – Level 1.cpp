@@ -364,10 +364,24 @@ void PrintRangeFrom1toN_UsingWhile(int number)
 }
 // END
 
+// proplem-27: Prints numbers from 1 to N using a do-while loop
+void PrintRangeFrom1toN_UsingDoWhile(int number)
+{
+    int counter = number;
+    
+    do
+    {
+        cout << counter << endl;
+        counter--;
+
+    } while (counter >= 1);
+}
+// END
+
 int main()
 {
     int number = readNumber();
-    PrintRangeFrom1toN_UsingWhile(number);
+    PrintRangeFrom1toN_UsingDoWhile(number);
 
     return 0;
 }
