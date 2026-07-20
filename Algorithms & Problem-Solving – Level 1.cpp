@@ -175,8 +175,29 @@ void printStudentStatus(bool isPass)
 }
 // END
 
+// proplem-9: read 3 numbers then print there sum
+void readNumbers(int& num1, int& num2, int& num3)
+{
+    cout << "enter num1: " << endl;
+    cin >> num1;
+    cout << "enter num2: " << endl;
+    cin >> num2;
+    cout << "enter num3: " << endl;
+    cin >> num3;
+}
+int sumNumbers(int num1, int num2, int num3)
+{
+    int result = num1 + num2 + num3;
+
+    return result;
+}
+// END
+
 int main()
 {
-    printStudentStatus(isPass(readNumber()));
+    int num1, num2, num3;
+    readNumbers(num1, num2, num3);
+    int result = sumNumbers(num1, num2, num3);
+    printMessage("sum = " + to_string(result));
     return 0;
 }
