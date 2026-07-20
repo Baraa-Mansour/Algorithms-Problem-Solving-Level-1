@@ -654,10 +654,39 @@ void PrintLettersFromAtoZ()
 }
 // END
 
+// proplem-40: get PIN until its = 1234 then print balance
+bool CheckPin(int pin)
+{
+    return pin == 1234;
+}
+bool ReadPin()
+{
+    int pin = 0;
+    do
+    {
+        pin = readNumber();
+
+        if (CheckPin(pin))
+            return true;
+        else
+        {
+            system("color 4F");
+            cout << "wrong!" << endl;
+        }
+        
+    } while (true);
+
+    return false;
+}
+// END
+
 int main()
 {
-    PrintLettersFromAtoZ();
-
+    if (ReadPin())
+    {
+        system("color 2F");
+        cout << to_string(7150) << endl;
+    }
 
     return 0;
 }
