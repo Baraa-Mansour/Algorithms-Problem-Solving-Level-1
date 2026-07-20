@@ -338,6 +338,19 @@ bool validateNumberInRange(int number, int from, int to)
 }
 // END
 
+// proplem-25: Repeatedly prompts the user to enter an age until it falls within the valid range
+int ReadUntilAgeBetween(int from, int to)
+{
+    int age = 0;
+    do
+    {
+        age = readNumber();
+    } while (!validateNumberInRange(age, from, to));
+
+    return age;
+}
+// END
+
 int main()
 {
     int age = readNumber();
