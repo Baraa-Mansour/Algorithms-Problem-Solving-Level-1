@@ -351,12 +351,23 @@ int ReadUntilAgeBetween(int from, int to)
 }
 // END
 
+// proplem-26: Prints numbers from 1 to N using a while loop
+void PrintRangeFrom1toN_UsingWhile(int number)
+{
+    int counter = 1;
+
+    while (counter <= number)
+    {
+        cout << counter << endl;
+        counter++;
+    }
+}
+// END
+
 int main()
 {
-    int age = readNumber();
-
-    if (validateNumberInRange(age, 18, 50))
-        cout << "valid" << endl;
+    int number = readNumber();
+    PrintRangeFrom1toN_UsingWhile(number);
 
     return 0;
 }
