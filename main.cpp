@@ -587,12 +587,26 @@ float Calculate(int num1, int num2, enOperationType op)
 }
 // END
 
+// proplem-36: sum user input until input = -99
+int SumNumbers()
+{
+    int result = 0;
+    int input = -99;
+
+    do
+    {
+        input = readNumber();
+
+        result += input;
+    } while (input != -99);
+
+    return result + 99; // add 99 cause the last user input is -99 and will sum to result
+}
+// END
+
 int main()
 {
-    int num1 = readNumber();
-    int num2 = readNumber();
-    enOperationType op = ReadOperation();
-    cout << Calculate(num1, num2, op);
+    cout << SumNumbers() << endl;
 
 
     return 0;
