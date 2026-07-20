@@ -421,10 +421,32 @@ int SumEvenNumbersFrom1toN_UsingDoWhile(int number)
 }
 // END
 
+// proplem-31: Read positive number then get factorial
+int readPositiveNumber()
+{
+    int number = 0;
+
+    do
+    {
+        number = readNumber();
+    } while (number < 0);
+
+    return number;
+}
+int factorial(int number)
+{
+    int factorial = 1;
+    for (int i = number; i > 1; i--)
+    {
+        factorial *= i;
+    }
+    return factorial;
+}
+
+
 int main()
 {
-    int number = readNumber();
-    cout << SumEvenNumbersFrom1toN_UsingDoWhile(number);
+    cout << factorial(readPositiveNumber());
 
     return 0;
 }
