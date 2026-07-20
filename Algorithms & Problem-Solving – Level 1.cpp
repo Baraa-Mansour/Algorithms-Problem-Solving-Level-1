@@ -388,10 +388,27 @@ void PrintRangeFromNto1_UsingFor(int number)
 }
 // END
 
+// proplem-29: Computes the sum of all odd numbers from 1 to N using a while loop
+int SumOddNumbersFrom1toN_UsingWhile(int number)
+{
+    int result = 0;
+
+    while (number > 0)
+    {
+        if (checkEvenOdd(number) == enNumberType::ODD)
+            result += number;
+
+        number--;
+    }
+
+    return result;
+}
+// END
+
 int main()
 {
     int number = readNumber();
-    PrintRangeFromNto1_UsingFor(number);
+    cout << SumOddNumbersFrom1toN_UsingWhile(number);
 
     return 0;
 }
