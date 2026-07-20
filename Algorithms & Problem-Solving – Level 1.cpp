@@ -280,11 +280,22 @@ float CircleAreaByDiameter(float D)
 }
 // END
 
+// proplem-20: Computes the area of a circle that is inscribed inside a square using the formula: (π * A²) / 4
+float CircleAreaInscribedInSquare(float A)
+{
+    const float PI = 3.141592653589793238;
+
+    float Area = (float)(PI * pow(A, 2)) / 4;
+
+    return Area;
+}
+// END
+
 int main()
 {
     int num1 = readNumber();
     int num2 = readNumber();
-    printMessage(to_string(CircleAreaByDiameter(num1)));
+    printMessage(to_string(CircleAreaInscribedInSquare(num1)));
 
     return 0;
 }
