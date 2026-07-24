@@ -9,7 +9,6 @@ x64/
 # Build output directories
 Debug/
 Release/
-x64/
 x86/
 *.exe
 *.dll
@@ -47,7 +46,6 @@ Thumbs.db
 desktop.ini
 
 # User-specific project files
-*.user
 *.opendb
 *.vspscc
 *.vssscc
